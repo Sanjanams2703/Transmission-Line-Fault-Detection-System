@@ -42,18 +42,18 @@ Manual fault detection in power lines leads to delays, high maintenance costs, a
 
 ---
 
-## 🔧 Hardware Components
+## Hardware Components
 
 * **ESP8266 (NodeMCU):** Wi-Fi microcontroller for real-time data transmission.
 * **ACS712 Current Sensor:** Detects overcurrent or short circuits.
 * **Flame Sensor:** Monitors fire hazards.
 * **HC-SR04 Ultrasonic Sensor:** Measures water level for flood detection.
 * **Neo-6M GPS Module:** Captures real-time location coordinates.
-* **Relay & Solenoid Valve (optional):** For circuit control.
 
+![Circuit Diagram](circuit_image.png)
 ---
 
-## 💾 Software Components
+## Software Components
 
 * **Arduino IDE:** Firmware development for ESP8266.
 * **ThingSpeak:** Cloud dashboard for data logging and analysis.
@@ -62,7 +62,7 @@ Manual fault detection in power lines leads to delays, high maintenance costs, a
 
 ---
 
-## ⚙️ Working Principle
+## Working Principle
 
 ### Sensor Monitoring:
 
@@ -84,7 +84,7 @@ Manual fault detection in power lines leads to delays, high maintenance costs, a
 
 ---
 
-## ☁️ Cloud Integration
+## Cloud Integration
 
 **ThingSpeak Channel Fields:**
 
@@ -102,7 +102,7 @@ Manual fault detection in power lines leads to delays, high maintenance costs, a
 
 ---
 
-## 🔔 Alert System
+## Alert System
 
 **Twilio SMS Trigger** (via MATLAB):
 
@@ -117,7 +117,7 @@ Manual fault detection in power lines leads to delays, high maintenance costs, a
 
 ---
 
-## 🧪 Implementation
+## Implementation
 
 ### Arduino Code:
 
@@ -138,7 +138,7 @@ Manual fault detection in power lines leads to delays, high maintenance costs, a
 
 ---
 
-## 📊 Results
+## Results
 
 * **Real-time monitoring:** Live readings visible on ThingSpeak dashboard.
 * **Accurate localization:** GPS pinpointing of fault.
@@ -147,7 +147,7 @@ Manual fault detection in power lines leads to delays, high maintenance costs, a
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 
 The system provides a cost-effective, reliable, and scalable solution for modernizing power line monitoring. It allows:
 
@@ -159,16 +159,3 @@ The system provides a cost-effective, reliable, and scalable solution for modern
 It lays the groundwork for smart grid systems with potential for ML/AI integration.
 
 ---
-
-## 👨‍💻 Team
-
-* **Nithya B** – 21MIS0150
-* **Tharun B** – 21MIS0293
-* **Sanjay Kumar S** – 21MIS0304
-* **Sanjana M S** – 21MIS0356
-
----
-
-## 📚 References
-
-Refer to the included literature review in the project document for more than 40 cited works on fault detection using AI, ML, and IoT techniques.
