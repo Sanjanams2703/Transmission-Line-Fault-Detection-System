@@ -1,0 +1,46 @@
+channelID = Your channel ID; 
+readAPIKey = 'Your Read API Key'; 
+
+data = thingSpeakRead(channelID, 'Fields', [1, 2, 3, 4, 5], 'NumPoints', 1, 'ReadKey', readAPIKey);
+current = data(1);
+flame = data(2);
+distance = data(3);
+latitude = data(4);
+longitude = data(5);
+
+accountSID = "Your Twilio SID";
+authToken = "Your Twilio Auth Token";
+twilioNumber = "Your Twilio Phone Number";
+toNumber = "Your Phone Number"; 
+
+alertMessages = [];
+
+if current > 12.00
+    alertMessages = [alertMessages, "Short Circuit"];
+end
+if flame == 0
+    alertMessages = [alertMessages, "Fire"];
+end
+if distance < 10
+    alertMessages = [alertMessages, "Flood"];
+end
+
+if ~isempty(alertMessages)
+    
+    alertText = strjoin(alertMessages, " & ");
+    message = sprintf('ALERT! %s detected! Location: https://www.google.com/maps?q=%f,%f', alertText, latitude, longitude);
+    
+   
+    twilioURL = sprintf('https://api.twilio.com/2010-04-01/Accounts/%s/Messages.json', accountSID);
+
+  
+    options = weboptions('Username', accountSID, 'Password', authToken, 'RequestMethod', 'post');
+
+    
+    try
+        response = webwrite(twilioURL, ...
+            'To', toNumber, 'From', twilioNumber, 'Body', message, options);
+    catch ME
+        fprintf('Twilio API Error: %s\n', ME.message);
+    end
+end
