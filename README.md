@@ -38,7 +38,7 @@ Manual fault detection in power lines leads to delays, high maintenance costs, a
 ---
 
 ## System Architecture
-
+![System Architecture](tarp flow chart.png)
 
 ---
 
